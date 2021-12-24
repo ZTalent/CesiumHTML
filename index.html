@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>三维展示系统</title>
+  <script src="./scripts/JavaScrip/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="./scripts/Cesium/Cesium.js"></script>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script src="./scripts/JavaScrip/CreatePoint.js"></script>
+  <script src="./scripts/JavaScrip/CreatePolyline.js"></script>
+  <script src="./scripts/JavaScrip/CreatePolygon.js"></script>
+  <script type="text/javascript" src="./scripts/JavaScrip/MeasureLineSpace.js"></script>
+  <script type="text/javascript" src="./scripts/JavaScrip/MeasureAreaSpace.js"></script>
+  <script type="text/javascript" src="./scripts/JavaScrip/MeasureHeight.js"></script>
+  <script type="text/javascript" src="./scripts/JavaScrip/MeasureCircle.js"></script>
+  <script type="text/javascript" src="./scripts/JavaScrip/MeasureSpaceLine.js"></script>
+  <script src="./scripts/JavaScrip/draw.js"></script>
+  <script src="./scripts/JavaScrip/hls.js"></script>
+  <script type="text/javascript" src="./scripts/AddModel/LoadModel.json"></script>
+  <script src="./scripts/JavaScrip/LoadModel.js"></script>
+  
+  
+</head>
+	<body class="layui-layout-body">
+		
+		<style>
+					@import url(./scripts/Cesium/Widgets/widgets.css);
+							  html,
+							  body,
+					
+					#cesiumContainer {
+						width: 100%;
+						height: 100%;
+						margin: 0;
+						padding: 0;
+						overflow: hidden;
+					}
+					
+					/* 地下模式开启关闭按钮 */
+					.buttonOn{
+						position: absolute;
+						left:68px;
+						top:11px;
+					}
+					
+					.swich .box{width:30px;height:17px;background:#ccc;border-radius:15px;transition: all .5s ease;}
+					.swich input{display:none;}
+					.swich .box span{display:inline-block;height:15px;width:15px;border-radius:40px;background:#ffffff;transform:translate(0px,-6px);transition: all .5s ease;}
+					.swich-on .box{background:#245890;transition: all .5s ease;}
+					.swich-on .box span{transform:translate(20px,-6px);transition: all .5s ease;}
+					
+					.model_swich .box{width:30px;height:17px;background:#ccc;border-radius:15px;transition: all .5s ease;}
+					.model_swich input{display:none;}
+					.model_swich .box span{display:inline-block;height:15px;width:15px;border-radius:40px;background:#ffffff;transform:translate(0px,-18.5px);transition: all .5s ease;}
+					.model_swich-on .box{background:#245890;transition: all .5s ease;}
+					.model_swich-on .box span{transform:translate(20px,-18.5px);transition: all .5s ease;}
+					
+					
+					.modelEditBarRange{width: 100px;margin-left: 6px;margin-top: 10px;}
+					.modelEditBarInput{width: 32px;margin-left:5px;}
+					.floatingWindow{
+						position: absolute;
+					}
+					
+					.layer_button{position:absolute;top:14px;left:8px;z-index:999;}
+		</style>
+			  
+	<div class="layui-layout layui-layout-admin">
+	  <div class="layui-header">
+		  <div id = "MenuControl" hidden>false</div>
+		  <div id = "MenuControl2" hidden>0</div>
+		  <div id = "DynamicMarkedID" hidden>0</div>
+		  <div id = "DynamicMarkedCount" hidden>1</div>
+		  <div class="layui-logo">三维展示系统</div>
+		 <ul class="layui-nav layui-layout-left" style="height:60px;">
+			<p style="margin-top: 5px;z-index: 999;">
+				<font style="position:absolute;left: 55px;">视点管理</font>
+				<font style="position:absolute;left: 230px;">动态标绘</font>
+				<font style="position:absolute;left: 530px;">测量</font>
+				<font style="position:absolute;left: 745px;">定位</font>
+				<font style="position:absolute;left: 820px;">地下模式</font>
+				<font style="position:absolute;left: 970px;">漫游</font>
+			</p>
+			
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="SmoothInspect()" id = "SmoothInspect">平视</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="OverLook()" id = "OverLook">俯视</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="LookUp()" id = "LookUp">仰视</button>
+			</li>
+	
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(0)" id = "drawGeometry0">点</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(1)" id = "drawGeometry1">线</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(2)" id = "drawGeometry2">多边形</button>
+			</li>
+			
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(7)" id = "drawGeometry7">删除</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(8)" id = "drawGeometry8">清空</button>
+			</li>
+			
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(3)" id = "drawGeometry3">水平距离</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(6)" id = "drawGeometry6">垂直距离</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(14)" id = "drawGeometry9">空间距离</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(4)" id = "drawGeometry4">空间面积</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(5)" id = "drawGeometry5">圆面积</button>
+			</li>
+			
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MenuShrinkageControl(1);" id = "MenuShrinkageControl1">坐标</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" >关键字</button>
+			</li>
+			
+
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MenuShrinkageControl(0);" id = "MenuShrinkageControl0">三维展示</button>
+			</li>
+			
+
+			<li class="layui-btn-group" style ="margin-top: 28px;">
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(12)" id = "startTheFirstPerson">第一人称漫游</button>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick="MainMenueControl(13)" id = "roamPath">路径漫游</button>
+				
+			</li>
+				<button type="button" class="layui-btn layui-btn-normal layui-btn-xs" onclick = "setFlow()" id = "setFlow" style ="margin-left: 20px;">流向展示</button>
+			</ul>
+
+		 <ul class="layui-nav layui-layout-right">
+			<li class="layui-nav-item" >
+				<a onclick="saveToFile()">
+					<img src="./layui/images/screenshot.png" class="layui-nav-img">场景出图
+				</a>
+			</li>
+		 </ul>
+		 <canvas id="myCanvas" pointer-events:none;></canvas>
+	  </div>
+
+
+	  
+	  
+	  
+	  
+	  
+<div class="layui-side layui-bg-black" style="width:200px;margin-left:-300px;" id="LayerEditMode1">
+	  <div class="layui-side" style="width:200px;margin-left:-300px;" id="LayerEditMode2">
+	  	 <div class="layui-side-scroll" style="width: 200px;">
+			<ul class="layui-nav layui-nav-tree" lay-filter="test" style="width: 200px;">
+				
+				<div>
+					<input type="search" placeholder="请输入关键字" id = "LayerSearchID" style="width: 150px;height:25px;margin-top: 10px;margin-left:5px;">
+					<button type="button" onclick="searchLayer()">搜索</button>
+				</div>
+				
+				<li class="layui-nav-item layui-nav-itemed">
+					<a>动态标绘</a>
+					<dl class="layui-nav-child" id="DynamicMarkedName">
+					</dl>
+				</li>
+				<li class="layui-nav-item" id = "YOUKU1">
+					   <a ondblclick="fly2Building(0)">里一联站</a>
+						<dl class="layui-nav-child">
+							<dd><input type="checkbox" class="layer_button" id="Device1" checked>
+							<a style="margin-left: 8px;">设备</a>
+							</dd>
+							<dd><input type="checkbox" class="layer_button" id="Building1" onclick="controlBuildingShow(0)" checked>
+							<a style="margin-left: 8px;">外部建筑</a>
+							</dd>
+							<dd><input type="checkbox" class="layer_button" id="Camera1" onclick="AdjustModelShow(0)" checked>
+							<a style="margin-left: 8px;" onclick="FlyToModel(0)">摄像头</a>
+							</dd>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item " id = "YOUKU2">
+					   <a ondblclick = "fly2Building(1)">留四十四站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device2" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building2" onclick="controlBuildingShow(1)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera2" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item" id = "YOUKU3">
+					   <a ondblclick = "fly2Building(2)">河一联站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device3" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building3" onclick="controlBuildingShow(2)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera3" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item" id = "YOUKU4">
+					   <a ondblclick = "fly2Building(3)">留十七站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device4" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building4" onclick="controlBuildingShow(3)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera4" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item" id = "YOUKU5">
+					   <a ondblclick = "fly2Building(4)">留六十九站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device5" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building5" onclick="controlBuildingShow(4)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera5" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item" id = "YOUKU6">
+					   <a ondblclick = "fly2Building(5)">稳定站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device6" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building6" onclick="controlBuildingShow(5)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera6" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item" id = "YOUKU7">
+					   <a ondblclick = "fly2Building(6)">王四联站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device7" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building7" onclick="controlBuildingShow(6)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera7" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+				<li class="layui-nav-item" id = "YOUKU8">
+					    <a ondblclick = "fly2Building(7)">王一联站</a>
+						<dl class="layui-nav-child">
+						<dd><input type="checkbox" class="layer_button" id="Device8" checked>
+						<a style="margin-left: 8px;">设备</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Building8" onclick="controlBuildingShow(7)" checked>
+						<a style="margin-left: 8px;">外部建筑</a>
+						</dd>
+						<dd><input type="checkbox" class="layer_button" id="Camera8" onclick="AdjustModelShow(0)" checked>
+						<a style="margin-left: 8px;">摄像头</a>
+						</dl>
+				</li>
+				
+			</ul>
+		</div>
+	 </div>
+</div>
+  
+	  <div class="layui-side" style="width:170px;margin-top: -1000px;margin-left:975px;height: 100px;" id="undergroundMode">
+	  		 <div class="layui-side-scroll">
+	  			<ul class="layui-nav layui-nav-tree"  lay-filter="test" style="width:220px;">
+	  				  
+	  			  <li class="layui-nav-item">
+	  				  <dd>
+	  				  	<a>透明度调整</a>
+	  				  </dd>
+	  				  <dd>
+	  						<input id="myRange" type="range" style="width:150px;margin-left: 13px;" value="100" onmouseup="changeAlpha()">
+	  				  </dd>
+	  			  </li>
+	  				  
+	  			</ul>
+	  		 </div>
+	  </div>
+	  
+	  
+	  <div class="layui-side"  style="width:170px;margin-top: -1000px;margin-left:875px;height: 150px;" id="lonlatMode">
+	  		 <div class="layui-side-scroll">
+	  			<ul class="layui-nav layui-nav-tree"  lay-filter="test" style="width:220px;">
+	  			  <li class="layui-nav-item">
+					  <dd> <a style="height:10px"></a></dd>
+	  				   <dd><a>经度<input id = "myLon" type="input" value ="0" style = "width:80px;margin-left: 20px;"></a></dd>
+	  				   <dd><a>纬度<input id = "myLat" type="input" value ="0" style = "width:80px;margin-left: 20px;"></a></dd>
+	  				   <dd><a onclick="fly2Mylonlat()" style="padding-left: 60px;">定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位</a></dd>
+	  			  </li>
+	  			</ul>
+	  		 </div>
+	  </div>
+	  
+	  <div class="layui-side"  style="width:170px;margin-top:-1000px;margin-left:350px;height: 150px;" id="Plot">
+	  		 <div class="layui-side-scroll">
+	  			<ul class="layui-nav layui-nav-tree"  lay-filter="test" style="width:220px;">
+	  			  <li class="layui-nav-item">
+	  					<dd> <a style="height:10px"></a></dd>
+	  				   <dd><a>标绘<input id = "PlotName" type="input" style = "width:80px;margin-left: 20px;"></a></dd>
+	  			  </li>
+	  			</ul>
+	  		 </div>
+	  </div>
+	  
+	  <div class="layui-side layui-bg-black" style="text-align:center;width:25px;height: 80px;margin-left:0px;margin-top:350px;" id="LayerEditMode3" onclick="MenuShrinkageControl(3)">
+	  		  图层显示
+	  </div>	  
+
+	  
+	  <div class="layui-body" style="margin-top: 0px;">
+		 <div id="cesiumContainer" class="fullsize"></div>
+		 <script src="./scripts/JavaScrip/CesiumMenu.js">
+		 </script>
+	  </div>
+	</div>
+		<script src="./layui/layui.js"></script>
+		<script>
+			//JavaScript代码区域
+			layui.use('element', function(){
+			  var element = layui.element;
+			});
+			  var timer;
+			  
+			  function MenuShrinkageControl(type)
+			  {
+				  var mflag = document.getElementById('MenuControl2').innerText;
+					  switch (type) {
+					      case 0:
+								if(mflag=="0"||mflag=="1")
+								{
+									document.getElementById('MenuControl2').innerText="1";
+									document.getElementById("MenuShrinkageControl0").classList.toggle("layui-btn-warm");
+									changeMode();
+									MenuShrinkage("undergroundMode");
+								}
+					       break;
+							  
+							 case 1:
+							 if(mflag=="0"||mflag=="2")
+							 {
+								 document.getElementById('MenuControl2').innerText="2";
+								 document.getElementById("MenuShrinkageControl1").classList.toggle("layui-btn-warm");
+								 MenuShrinkage("lonlatMode");
+							 }
+							 break;
+							 
+							 case 2:
+								MenuShrinkage("ModelEdit");
+							 break;
+							 
+							 case 3:
+								LayerMenuShrinkage();
+							 break;
+							 
+							 case 4:
+								MenuShrinkage("Plot");
+					  }
+			  }
+			  
+			  function MenuShrinkage(menu_id)
+			  {
+				  clearInterval(timer);
+				  var odiv = document.getElementById(menu_id);
+				   if (odiv.style.marginTop =="-1000px") {
+					document.getElementById('MenuControl').innerText="true";
+				  	timer = setInterval(function () {
+				  	  odiv = document.getElementById(menu_id);
+				  	  odiv.style.marginTop = 0+"px";
+				  	}, 10)
+				   }
+				   if (odiv.style.marginTop =="0px") {
+				  	timer = setInterval(function () {
+				  	  odiv = document.getElementById(menu_id);
+				  	  odiv.style.marginTop  = -1000+"px";
+				  	}, 10)
+					document.getElementById('MenuControl').innerText="false";
+					document.getElementById('MenuControl2').innerText="0";
+				   }
+			  }
+			  
+			  var timer1;
+			  var timer2;
+			  var timer3;
+			  function LayerMenuShrinkage() {
+				clearInterval(timer1);
+				clearInterval(timer2);
+				clearInterval(timer3);
+				
+				var odiv = document.getElementById("LayerEditMode1");
+				 if (odiv.style.marginLeft =="-300px") {
+					timer2 = setInterval(function () {
+					  odiv = document.getElementById("LayerEditMode1");
+					  odiv.style.marginLeft = 0+"px";
+					}, 10)
+				 }
+				 if (odiv.style.marginLeft =="0px") {
+					timer2 = setInterval(function () {
+					  odiv = document.getElementById("LayerEditMode1");
+					  odiv.style.marginLeft  = -300+"px";
+					}, 10)
+				 }
+				 
+				 var odiv1 = document.getElementById("LayerEditMode2");
+				  if (odiv1.style.marginLeft =="-300px") {
+				 	timer1 = setInterval(function () {
+				 	  odiv1 = document.getElementById("LayerEditMode2");
+				 	  odiv1.style.marginLeft = 0+"px";
+				 	}, 10)
+				  }
+				  
+				  if (odiv1.style.marginLeft =="0px") {
+				 	timer1 = setInterval(function () {
+				 	  odiv1 = document.getElementById("LayerEditMode2");
+				 	  odiv1.style.marginLeft  = -300+"px";
+				 	}, 10)
+				  }
+				 
+				 var odiv2 = document.getElementById("LayerEditMode3");
+				  if (odiv2.style.marginLeft =="0px") {
+				 	timer3 = setInterval(function () {
+				 	  odiv2 = document.getElementById("LayerEditMode3");
+				 	  odiv2.style.marginLeft = 200+"px";
+				 	}, 10)
+				  }
+				  if (odiv2.style.marginLeft =="200px") {
+				 	timer3 = setInterval(function () {
+				 	  odiv2 = document.getElementById("LayerEditMode3");
+				 	  odiv2.style.marginLeft  = 0+"px";
+				 	}, 10)
+				  }
+			  }
+				
+		function drawScreen()
+		{
+			const canvas = document.getElementById('myCanvas');
+			const context = canvas.getContext('2d');
+			canvas.width = document.body.scrollWidth;
+			canvas.height = 60;
+			context.strokeStyle = '#8b8b8b';
+			context.lineWidth = 2; // 设置线段宽度
+			
+			context.beginPath(); //横线
+		   context.moveTo(220, 30);
+			context.lineTo(1300, 30);
+			context.stroke(); // 进行绘制外边框
+			
+			context.beginPath(); // 视点管理
+			context.moveTo(347, 10);
+			context.lineTo(347, 55);
+			context.stroke(); // 进行绘制外边框
+			
+			context.beginPath(); // 动态标绘
+			context.moveTo(560, 10);
+			context.lineTo(560, 55);
+			context.stroke(); // 进行绘制外边框
+			
+			context.beginPath(); // 测量
+			context.moveTo(905, 10);
+			context.lineTo(905, 55);
+			context.stroke(); // 进行绘制外边框
+			
+			context.beginPath(); // 定位
+			context.moveTo(1011, 10);
+			context.lineTo(1011, 55);
+			context.stroke(); // 进行绘制外边框
+			
+			context.beginPath(); // 漫游
+			context.moveTo(1085, 10);
+			context.lineTo(1085, 55);
+			context.stroke(); // 进行绘制外边框
+		}
+		drawScreen();
+		
+		</script>
+	</body>
+</html>

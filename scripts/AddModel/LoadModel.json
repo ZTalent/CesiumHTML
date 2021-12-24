@@ -1,0 +1,1082 @@
+var LYLModelPath = [{
+    "path":"./model/LYLModel/cy.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/cyg-1.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/cyg-2.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/cyg-3.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/cyg-4.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/GL.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/gyg-1.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/gyg-2.gltf",
+    "pipeline":true
+},{
+    "path":"./model/LYLModel/jrl-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/jrl-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/jrl-3.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/qiang.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/qsg-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/qsg-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/qtsb.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/rsb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/rsb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/rsl.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/shineidi.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/syb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/syb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/tjg.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/tsb.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wsb.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wsb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wsb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wsg.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wsl.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wz-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wz-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wz-3.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wz-4.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wz-5.gltf",
+    "pipeline":false
+},{
+    "path":"./model/LYLModel/wz-6.gltf",
+    "pipeline":false
+}]
+
+var LYL004ModelPath = [
+    {
+        "path": "./model/LYLModel/LYL004/wz-6.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wz-5.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wz-4.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wz-3.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wz-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wz-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wsl.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wsg.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wsb.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wsb-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/wsb-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/tsb.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/tjg.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/syb-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/syb-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/rsl.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/rsb-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/rsb-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/qtsb.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/qsg-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/qsg-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/jrl-3.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/jrl-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/jrl-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/gyg-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/gyg-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/cyg-4.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/cyg-3.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/cyg-2.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/cyg-1.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/cy.obj_0.004.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/LYLModel/LYL004/GL.obj_0.004.glb",
+        "pipeline": false
+    }
+]
+
+var LELModelPath = [{
+    "path":"./model/44Model/1.1.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/1.2.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/1.3.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/1.4.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/2.1.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/2.2.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/2.3.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/2.4.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/3.1.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/3.2.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/11.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/12.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/13.glb",
+    "pipeline":true
+},{
+    "path":"./model/44Model/14.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/15.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/16.glb",
+    "pipeline":true
+},{
+    "path":"./model/44Model/17.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/21.glb",
+    "pipeline":true
+},{
+    "path":"./model/44Model/22.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/23.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/24.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/25.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/26.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/27.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/31.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/32.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/33.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/34.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/35.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/36.glb",
+    "pipeline":false
+},{
+    "path":"./model/44Model/qiang.gltf",
+    "pipeline":false
+}]
+
+
+
+var HYLModelPath = [{
+    "path":"./model/HYLModel/cy.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/cyg-1.gltf",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/cyg-2.gltf",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/cyg-3.gltf",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/cyg-4.gltf",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/815flq.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/glg-1.gltfb",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/glg-2.gltf",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/hcg-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/hcg-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/hcg-da.gltf",
+    "pipeline":true
+},{
+    "path":"./model/HYLModel/jrl-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/jrl-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/qfg.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/qiang.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/qsg-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/rsb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/rsb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/rsb-3.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/shinei-di.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/syb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/syb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/syb-3.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/tsb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/tsb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/tsb-3.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/tsq-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/tsq-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/tsq-3.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/wsb-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/wsb-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/wsg-1.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/wsg-2.gltf",
+    "pipeline":false
+},{
+    "path":"./model/HYLModel/yyjrl.gltf",
+    "pipeline":false
+}]
+
+var L17ModelPath = [
+    {
+        "path": "./model/17Model/xfg-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/xfg-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/xfb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/xfb-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/tsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/sxflq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/ryb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/rsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/rsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/qt.gltf",
+        "pipeline": true
+    },
+    {
+        "path": "./model/17Model/qsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/qiang.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/lhbfsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/jrl-3.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/jrl-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/jhyg-3.gltf",
+        "pipeline": true
+    },
+    {
+        "path": "./model/17Model/jhyg-2.gltf",
+        "pipeline": true
+    },
+    {
+        "path": "./model/17Model/jhyg-1.gltf",
+        "pipeline": true
+    },
+    {
+        "path": "./model/17Model/flhcg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/cyq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/17Model/cyg.gltf",
+        "pipeline": false
+    }
+]
+
+var L69ModelPath = [
+    {
+        "path": "./model/69Model/zsb-3.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/zsb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/zsb-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/zjg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/wsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/syb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/sxflq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/shineidi.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/rsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/rsb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/rsb-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/qt.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/qsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/qiang.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/psj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/pdssb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/kqysj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/kqcg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/jyzz.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/jrl-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/jrl-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/jfsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/hrq-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/hrq-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/cyq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/cyg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/csl.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/69Model/csbfsb.gltf",
+        "pipeline": false
+    }
+]
+
+var WDZModelPath = [
+    {
+        "path": "./model/WDZModel/zpds.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/yl-3.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/xfpmb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/xfpmb-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/xflqb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/xflqb-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/wusb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/wsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/sl-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/shineidi.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/rsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/rsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/qsg-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/qsg-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/qsb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/qsb-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/qiang.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/pmg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/pds.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/llj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/lbfsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/kyj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/jrl-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/hrq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/fkqjhg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/cyg-4.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/cyg-3.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/cyg-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/cyg-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WDZModel/GLqt.gltf",
+        "pipeline": false
+    }
+]
+
+var WSLModelPath =[
+    {
+        "path": "./model/WSLModel/zsj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/zsg-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/zsg-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/zsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/zsb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/xfg-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/xfg-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/xfb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/wyb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/wusb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/wusb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/wshcg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/wsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/wsb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/tsq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/tsq-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/tjg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/syb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/sxflq-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/sxflq-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/shineidi.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/rsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/rsb-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/qt.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/qiang.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/qfg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jyj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jyj-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jsl-5.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jsl-4.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jsl-3.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jsl-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jsl-1.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jlzjg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/jlj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/gyg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/gsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/gl.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/flhcg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg-6.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg-5.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg-4.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg-3.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg-2.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WSLModel/cyg-1.gltf",
+        "pipeline": false
+    }
+]
+
+var WYLModelPath =[
+    {
+        "path": "./model/WYLModel/zsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/zsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/xfsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/xfb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/wsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/wllj.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/weisb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/waisb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/tsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/ryb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/rsg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/rsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/qt.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/qiang.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/llzjg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/kqcg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/jy.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/jrl.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/jlflq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/hrq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/glq.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/glg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/gl.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/fsb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/flhcg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/di-shinei.glb",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/cyq-e.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/cyq-cd.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/cyq-ab.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/cyg.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/csb.gltf",
+        "pipeline": false
+    },
+    {
+        "path": "./model/WYLModel/7jzjg.gltf",
+        "pipeline": false
+    }
+]
